@@ -1,0 +1,53 @@
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.6s;
+    scale: 1.05;
+  }
+  
+  .poster {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .meta {
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .favButton {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.3s ease;
+  }
+  
+  .favButton:hover {
+    background: #2563eb;
+  }

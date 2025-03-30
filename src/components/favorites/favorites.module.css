@@ -1,0 +1,66 @@
+.favorites {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .empty {
+    text-align: center;
+    color: #666;
+  }
+  
+  
+  
+  .card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .poster {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+  }
+  .details {
+    padding: 1rem;
+  }
+  
+  .movieTitle {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .removeButton {
+    width: auto;
+    margin-top: 0.5rem;
+    padding: 0.25rem;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .removeButton:hover {
+    background: #cc0000;
+  }
