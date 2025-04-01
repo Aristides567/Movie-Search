@@ -12,12 +12,14 @@
   
   .input {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 3rem 0.75rem 1rem;
     padding-right: 3rem;
     border: 1px solid #ccc;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
     font-size: 1rem;
     outline: none;
+    
   }
   
   .input:focus {

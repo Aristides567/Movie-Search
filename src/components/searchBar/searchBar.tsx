@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import {motion} from 'framer-motion';
 import styles from "./SearchBar.module.css";
 
 
@@ -17,18 +18,19 @@ export const SearchBar = ({onSearch}: SearchBarProps) => {
     
     return (
     <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.searchContainer}>
+        <motion.div initial={{scale: 0.5}} animate={{scale: 1}} transition={{ duration: 0.5 }} className={styles.searchContainer}>
             <input
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Search for a movie..."
             className={styles.input}
+            autoFocus
             />
             <button type="submit" className={styles.button}>
             🔍
             </button>
-        </div>
+        </motion.div>
     </form>
     )
 }

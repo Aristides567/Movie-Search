@@ -1,4 +1,6 @@
 import { Movie } from "../../types/movie";
+import {motion} from 'framer-motion';
+import { Tooltip } from "react-tooltip";
 import styles from "./favorites.module.css";
 interface FavoritesProps {
   favorites: Movie[];
@@ -15,13 +17,16 @@ export default function Favorites({ favorites, onRemove }: FavoritesProps) {
         <div className={styles.grid}>
           {favorites.map((movie) => (
             <div key={movie.imdbID} className={styles.card}>
+              <Tooltip id="img-movie-tooltip" />
               <img
                 src={movie.Poster}
+                data-tooltip-content={movie.Title}
+                data-tooltip-id="img-movie-tooltip"
                 alt={movie.Title}
                 className={styles.poster}
               />
               <div className={styles.details}>
-                <h3 className={styles.movieTitle}>{movie.Title}</h3>
+                <motion.h3 className={styles.movieTitle}>{movie.Title}</motion.h3>
                 <button
                   onClick={() => onRemove(movie.imdbID)}
                   className={styles.removeButton}

@@ -1,66 +1,163 @@
 .favorites {
-    margin-top: 3rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 1400px;
+}
+
+.title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d3748;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.empty {
+  text-align: center;
+  color: #64748b;
+  font-size: 1.1rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.poster {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.movieTitle {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.removeButton {
+  width: 100%;
+  margin-top: auto;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.removeButton:hover {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  transform: scale(1.02);
+}
+
+.removeButton::before {
+  content: '✕';
+  font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+  .favorites {
     padding: 1.5rem;
-    background-color: #f8f9fa;
-    border-radius: 0.5rem;
+    margin: 3rem auto;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites {
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 12px;
   }
   
   .title {
     font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .empty {
-    text-align: center;
-    color: #666;
-  }
-  
-  
-  
-  .card {
-    background: white;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .poster {
-    width: auto;
-    height: auto;
-    object-fit: cover;
   }
   
   .grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3em;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
+  
+  .poster {
+    height: 240px;
+  }
+  
   .details {
     padding: 1rem;
   }
   
-  .movieTitle {
-    font-size: 1rem;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
   .removeButton {
-    width: auto;
-    margin-top: 0.5rem;
-    padding: 0.25rem;
-    background: #ff4444;
-    color: white;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background 0.3s;
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
-  
-  .removeButton:hover {
-    background: #cc0000;
-  }
+}
