@@ -6,6 +6,139 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Estilos para el contenedor del logo */
+.logo_container {
+  position: sticky;
+  top: 2rem;
+  right: 2rem;
+  align-self: flex-end;
+  background-color: rgb(137, 137, 137);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  z-index: 1000; 
+  cursor: pointer;
+}
+
+.loged_modal {
+  position: fixed;
+  top: calc(50px + 4rem); 
+  right: 10rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  width: 200px;
+  z-index: 101;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.loged_modal.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.loged_modal p {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.loged_modal p:hover {
+  background-color: #f5f5f5;
+}
+
+.loged_modal button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .loged_modal {
+    width: 90vw;
+    right: 5vw;
+  }
+}
+
+/* Sección de login */
+.login_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login_section h3 {
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+.login_section p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Botones */
+.menuButton, .primaryButton, .secondaryButton {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menuButton {
+  background: none;
+  text-align: left;
+  padding: 10px;
+}
+
+.menuButton:hover {
+  background-color: #f5f5f5;
+}
+
+.primaryButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.primaryButton:hover {
+  background-color: #45a049;
+}
+
+.secondaryButton {
+  background-color: #f1f1f1;
+  margin-top: 5px;
+}
+
+.secondaryButton:hover {
+  background-color: #e1e1e1;
+}
+
+.menuItem {
+  padding: 10px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.menuItem:hover {
+  background-color: #f5f5f5;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
