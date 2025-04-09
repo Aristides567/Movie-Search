@@ -11,6 +11,7 @@ import {motion} from 'framer-motion';
 import styles from './Home.module.css';
 import Loged_user from '../assets/user_loged.svg';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
     const API_KEY = import.meta.env.VITE_API_KEY
@@ -22,6 +23,22 @@ export const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const modalRef = useRef<HTMLDivElement>(null);
     const logoRef = useRef<HTMLDivElement>(null);
+    const [username, setUsername] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        setIsLogged(true);
+        setUsername(JSON.parse(storedUser));
+      }
+    },[])
+
+    const handleLogout = async () =>{
+      localStorage.removeItem('user');
+      setIsLogged(false);
+      navigate('/login')
+    }
 
     const toggleModal = () => {
       setIsModalOpen(!isModalOpen);
@@ -81,7 +98,7 @@ export const Home = () => {
             {isLogged ? (
               <>
                 <p style={{ textAlign: "center" }} role="menuitem">
-                  Bienvenido, Usuario
+                  Bienvenido, {typeof username === 'string' ? username : username?.name || 'Invitado'}
                 </p>
                 <p role="menuitem" className={styles.menuItem}>
                   Favoritos
@@ -90,7 +107,7 @@ export const Home = () => {
                   type="button" 
                   role="menuitem" 
                   className={styles.menuButton}
-                  onClick={() => {}}
+                  onClick={handleLogout}
                 >
                   Cerrar sesión
                 </button>
